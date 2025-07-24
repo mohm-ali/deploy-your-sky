@@ -232,8 +232,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         console.warn('Global signout failed:', err);
       }
       
-      // Force page reload for clean state
-      window.location.href = '/';
     } catch (error: any) {
       toast({
         title: "Sign out failed",

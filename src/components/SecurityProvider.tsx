@@ -36,10 +36,7 @@ export const SecurityProvider = ({ children }: SecurityProviderProps) => {
 
     addSecurityMeta();
 
-    // Prevent clickjacking
-    if (window.top !== window.self) {
-      window.top!.location = window.self.location;
-    }
+    // Note: Clickjacking prevention removed to avoid iframe navigation issues
 
     // Disable right-click context menu in production (optional)
     const handleContextMenu = (e: MouseEvent) => {
