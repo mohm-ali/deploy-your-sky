@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,6 +14,7 @@ import { Server, User, Settings, LogOut } from 'lucide-react';
 
 const Navbar = () => {
   const { user, signOut } = useAuth();
+  const location = useLocation();
 
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

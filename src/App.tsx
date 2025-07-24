@@ -9,6 +9,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Servers from "./pages/Servers";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 import Navbar from "@/components/Navbar";
 
@@ -27,6 +28,11 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/auth" element={<Auth />} />
+                <Route path="/dashboard" element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                } />
                 <Route path="/servers" element={
                   <ProtectedRoute>
                     <Servers />
